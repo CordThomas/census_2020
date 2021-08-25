@@ -1,6 +1,6 @@
 .DS_Store
 .idea
-data/ca2020.pl/*
+data/
 *.csv
 *.txt
 *.db*

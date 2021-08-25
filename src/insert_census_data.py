@@ -87,14 +87,15 @@ def populate_table_geo_headings(census_db, table_name, source_file):
             log_rec_nos.append(values[7])
             if record_count % 1000 == 0:
                 print("Populating {} with {} records".format(str(record_count), str(len(sql_values))))
-                execute_many_sql(census_db, sql_statement, sql_values)
+                # execute_many_sql(census_db, sql_statement, sql_values)
+                sql_values = []
 
             if record_count % 10000 == 0:
                 census_db.commit()
 
     # One last execute to catch the remaining records
-    execute_many_sql(census_db, sql_statement, sql_values)
-    census_db.commit()
+    # execute_many_sql(census_db, sql_statement, sql_values)
+    # census_db.commit()
 
     return log_rec_nos
 
@@ -120,6 +121,7 @@ def populate_table_p1(census_db, table_name, source_file, log_rec_nos):
             if record_count % 1000 == 0:
                 print("Populating {} with {} records".format(str(record_count), str(len(sql_values))))
                 execute_many_sql(census_db, sql_statement, sql_values)
+                sql_values = []
 
             if record_count % 10000 == 0:
                 census_db.commit()
