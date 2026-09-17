@@ -12,3 +12,7 @@ data.  The particular interest is for Westchester / Playa neighborhoods.
 * Create the database schema - based on the fields available in the legacy format
 * Insert census data into the database for all blocks in LA County (037)
 * More to come...
+
+## Supporting sites
+
+https://www.dolthub.com/blog/2021-09-10-2020-census/
